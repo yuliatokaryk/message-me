@@ -11,8 +11,9 @@
   </head>
 
   <body>
-    <%= render './layouts/partials/navbar.html.erb' %>
+    <%= render './layouts/navbar' %>
     <div class="ui container">
+      <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
   </body>
