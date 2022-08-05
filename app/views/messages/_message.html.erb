@@ -1,7 +1,13 @@
 <div class="event">
   <div class="content">
     <div class="summary">
-      <em><%= message.user.username %> </em>: <%= message.body %>
+      <% if message.user != nil %>
+        <em>
+          <%= link_to message.user.username, user_path(message.user) %> 
+        </em>: <%= message.body %>
+      <% else %>
+        <em>Deleted</em>: <%= message.body %>
+      <% end %>
     </div>
   </div>
 </div>

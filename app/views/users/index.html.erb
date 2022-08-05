@@ -1,11 +1,11 @@
 <div class="ui grid">
-  <% @users.each do |user|%>
+  <% @users.each do |user| %>
     <div class="four wide column">
       <div class="ui card">
         <div class="content">
           <%= link_to user.username, user, class: "header" %>
           <div class="meta">
-          <span class="date">Joined in <%= user.created_at %></span>
+            <span class="date">Joined in <%= user.created_at %></span>
           </div>
           <div class="description">
             <p>
@@ -26,6 +26,7 @@
             <%= user.about %>.
           </p>
         </div>
+      </div>
     </div>
-  <% end %>
+  <%end%>
 </div>

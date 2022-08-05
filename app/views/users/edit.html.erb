@@ -1,2 +1,3 @@
 <h1 class="ui center aligned header">Edit your profile</h1>
 <%= render 'form' %>
+<%= link_to "Delete my account", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "ui inverted red button marg"%>

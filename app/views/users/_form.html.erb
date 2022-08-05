@@ -1,4 +1,6 @@
 <div class="ui segment">
+  <small>All fields with * must be filled </small>
+  <hr>
   <%= form_with(model: @user) do |f| %>
     <div class="ui form">
       <h3>General information</h3>
@@ -9,16 +11,16 @@
           </div>
           <div class="field">
             <%= f.label "Password *" %>
-            <%= f.text_field :password_digest, type: "password", placeholder: "Enter password" %>
+            <%= f.password_field :password, type: "password", placeholder: "Enter password" %>
           </div>
         </div>
         <div class="two fields">
           <div class="field">
-            <%= f.label "Birthday" %>
+            <%= f.label "Birthday *" %>
             <%= f.date_field :birthday %>
           </div>
           <div class="field">
-            <%= f.label "Gender" %>
+            <%= f.label "Gender *" %>
             <%= f.select :sex, options_for_select(["Male", "Female", "Other"]), prompt: 'Select gender' %>
           </div>
         </div>

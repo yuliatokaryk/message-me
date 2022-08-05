@@ -16,7 +16,7 @@
           <div class="field">
             <div class="ui fluid icon input">
               <%= f.text_field :body, placeholder: "Write a message..." %>
-              <%= f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe %>
+              <%= f.button '<i class="bordered inverted orange edit icon "></i>'.html_safe, class: "icon-message" %>
             </div>
           </div>
         <% end %>
@@ -29,22 +29,13 @@
       <div class="content">
         <div class="ui vertical menu">
           <a class="active teal item">
-            Inbox
-            <div class="ui teal left pointing label">1</div>
+            Messages in chat:
+            <div class="ui teal left pointing label"><%= @messages.count %></div>
           </a>
           <a class="item">
-            Spam
-            <div class="ui label">51</div>
+            People in chat
+            <div class="ui label"><%= @users.count %></div>
           </a>
-          <a class="item">
-            Updates
-            <div class="ui label">1</div>
-          </a>
-          <div class="item">
-            <div class="ui transparent icon input">
-              <input type="text" placeholder="Search mail...">
-              <i class="search icon"></i>
-            </div>
           </div>
         </div>
       </div>

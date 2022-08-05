@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user,  only: [:show, :edit, :update, :destroy]
-  before_action :require_user, only: [:edit, :update]
+  before_action :require_user, only: [:edit, :update, :index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password_digest, :about, :country, :city, :education, :work, :sex, :hobby, :birthday, :languages, :public, :number, :facebook, :twitter, :instagram, :email, :site)
+    params.require(:user).permit(:username, :password, :about, :country, :city, :education, :work, :sex, :hobby, :birthday, :languages, :public, :number, :facebook, :twitter, :instagram, :email, :site)
   end
 
   def set_user
