@@ -1,0 +1,64 @@
+<div class="ui card user-card">
+  <h2 class="header"><%= @user.username %></h2>
+  <% if @user == current_user %>
+    <p>[<%= link_to "Edit profile", edit_user_path(@user) %>]</p>
+  <% end %>
+  <div class="meta">
+    <p><em>Joined <span><%= @user.created_at %></span></em></p>
+  </div>
+  <br>
+  <div class="ui two column grid">
+    <div class="ten wide column">
+        <h3>General information</h3>
+        <p>
+          <b>Lives in: </b>
+          <% if @user.city? %>
+            <%= @user.city %>, <%= @user.country %>
+          <% else %>
+            <%= @user.country %>
+          <% end %>
+        </p>
+        <% if @user.public == true && @user.birthday? %>
+          <p><b>Birthday:</b> <%= @user.birthday %></p>
+        <% end %>
+        <% if @user.sex? %>
+          <p><b>Gender:</b> <%= @user.sex %></p>
+        <% end %>
+        <% if @user.education? %>
+          <p><b>Education:</b> <%= @user.education %></p>
+        <% end %>
+        <% if @user.work? %>
+          <p><b>Job:</b> <%= @user.work %></p>
+        <% end %>
+        <p><b>Languages:</b> <%= @user.languages %></p>
+        <% if @user.hobby? %>
+          <p><b>Hobby:</b> <%= @user.hobby %></p>
+        <% end %>
+        <h3>About <%= @user.username %></h3>
+        <p><%= @user.about %></p>
+    </div>
+    <div class="six wide column">
+      <h3>Contact information</h3>
+      <% if @user.public == false %>
+        <p><em>Contact information hidden by privacy setting.</em></p>
+      <% else %>
+        <p><b>Email address: </b><%= @user.email %></p>
+        <% if @user.number? %>
+          <p><b>Mobile number: </b><%= @user.number %></p>
+        <% end %>
+        <% if @user.facebook? %>
+          <p><b>Facebook: </b><%= link_to @user.facebook, @user.facebook %></p>
+        <% end %>
+        <% if @user.twitter? %>
+          <p><b>Twitter: </b><%= link_to @user.twitter, @user.twitter %></p>
+        <% end %>
+        <% if @user.instagram? %>
+          <p><b>Instagram: </b><%= link_to @user.instagram, @user.instagram %></p>
+        <% end %>
+        <% if @user.site? %>
+          <p><b>Personal site: </b><%= link_to @user.site, @user.site %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

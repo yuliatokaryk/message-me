@@ -41,6 +41,8 @@ $(document).on('turbolinks:load', function() {
       .closest('.message')
       .transition('fade');
   });
+  $('.ui.radio.checkbox')
+  .checkbox();
   submit_message();
   scroll_bottom();
 })

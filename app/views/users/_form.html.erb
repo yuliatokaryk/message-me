@@ -1,0 +1,99 @@
+<div class="ui segment">
+  <%= form_with(model: @user) do |f| %>
+    <div class="ui form">
+      <h3>General information</h3>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Username *" %>
+            <%= f.text_field :username, type: "text", placeholder: "Enter username" %>
+          </div>
+          <div class="field">
+            <%= f.label "Password *" %>
+            <%= f.text_field :password_digest, type: "password", placeholder: "Enter password" %>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Birthday" %>
+            <%= f.date_field :birthday %>
+          </div>
+          <div class="field">
+            <%= f.label "Gender" %>
+            <%= f.select :sex, options_for_select(["Male", "Female", "Other"]), prompt: 'Select gender' %>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Country *" %>
+            <%= f.select :country, options_for_select(["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"]), prompt: 'Select country' %>
+          </div>
+          <div class="field">
+            <%= f.label "city" %>
+            <%= f.text_field :city, type: "text", placeholder: "Enter your current city" %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label "Languages *" %>
+          <%= f.text_field :languages, type: "text", placeholder: "What languages do you speak?" %>
+        </div>
+        <div class="field">
+          <%= f.label "education" %>
+          <%= f.text_field :education, type: "text", placeholder: "Enter your school/college/university" %>
+        </div>
+        <div class="field">
+          <%= f.label "work" %>
+          <%= f.text_field :work, type: "text", placeholder: "What's your job?" %>
+        </div>
+        <div class="field">
+          <%= f.label "hobby" %>
+          <%= f.text_area :hobby, type: "text", placeholder: "What do you like doing in your spare time?" %>
+        </div>
+        <div class="field">
+          <%= f.label "About *" %>
+          <%= f.text_area :about, type: "text", placeholder: "Tell more about yourself...(minimum 50 characters)" %>
+        </div>
+        <h3>Contact information</h3>
+        <small>Add your contact information so people can follow you</small>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Email *" %>
+            <%= f.text_field :email, placeholder: "Email address", type: "email" %>
+          </div>
+         <div class="field">
+            <%= f.label "Mobile number" %>
+            <%= f.text_field :number, placeholder: "Mobile number" %>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Facebook" %>
+            <%= f.text_field :facebook, placeholder: "Facebook profile" %>
+          </div>
+          <div class="field">
+            <%= f.label "Twitter" %>
+            <%= f.text_field :twitter, placeholder: "Twitter profile" %>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <%= f.label "Instagram" %>
+            <%= f.text_field :instagram, placeholder: "Instagram profile" %>
+          </div>
+          <div class="field">
+            <%= f.label "Personal site" %>
+            <%= f.text_field :site, placeholder: "Personal site address" %>
+          </div>
+        </div>
+        <div class="grouped fields">
+          <h3>Privacy setting</h3>
+          <%= f.radio_button :public, true %> 
+          <%= f.label "Public profile"  %><br>
+          <%= f.radio_button :public, false %>
+          <%= f.label "Private profile" %><br>
+          <small>If your account is private nobody can see your private information (birthday, contact information)</small>
+        </div>
+
+      <%= f.submit :submit, class: "ui submit button" %>
+    </div>
+  <% end %>
+</div>

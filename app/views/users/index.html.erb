@@ -1,0 +1,31 @@
+<div class="ui grid">
+  <% @users.each do |user|%>
+    <div class="four wide column">
+      <div class="ui card">
+        <div class="content">
+          <%= link_to user.username, user, class: "header" %>
+          <div class="meta">
+          <span class="date">Joined in <%= user.created_at %></span>
+          </div>
+          <div class="description">
+            <p>
+              <b> <%= user.username %> lives in </b>
+              <% if user.city? %> 
+                <%= user.city %>, <%= user.country %>.
+              <% else %>
+                <%= user.country %>.
+              <% end %>
+            </p>
+            <p>
+              <b>Speaks: </b><%= user.languages %>.
+            </p>
+          </div>
+        </div>
+        <div class="extra content">
+          <p>
+            <%= user.about %>.
+          </p>
+        </div>
+    </div>
+  <% end %>
+</div>
